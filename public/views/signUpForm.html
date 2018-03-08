@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp Page</title>
+</head>
+<body>
+    <div class="container" style="margin-top: 80px; width: 600px;">
+        <div ng-if="errorText">
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> User is already registered!.
+                </div>
+        </div>
+        <div class="card">
+            <div class="card-header"><h2>Sign Up</h2></div>
+            <div class="card-body">
+                <form name="signUpForm" ng-submit="signUp()">
+
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" class="form-control" id="first_name" ng-model="user.first_name" required>
+                    <p style="color: red;" ng-show="signUpForm.first_name.$invalid && !signUpForm.first_name.$pristine" class="help-block">First Name is required.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" class="form-control" id="last_name" ng-model="user.last_name" required>
+                    <p style="color: red;" ng-show="signUpForm.last_name.$invalid && !signUpForm.last_name.$pristine" class="help-block">Last Name is required.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" ng-model="user.email" required>
+                    <p style="color: red;" ng-show="signUpForm.email.$invalid && !signUpForm.email.$pristine" class="help-block">Enter valid email.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile No</label>
+                    <input type="number" name="mobile" class="form-control" id="mobile" ng-model="user.mobile" ng-minlength="10" ng-maxlength="10">
+                    <p style="color: red;" ng-show="signUpForm.mobile.$error.minlength" class="help-block">Enter 10 digit Mobile No.</p>
+                    <p style="color: red;" ng-show="signUpForm.mobile.$error.maxlength" class="help-block">Enter 10 digit Mobile No.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="userId">UserId</label>
+                    <input type="text" name="userId" class="form-control" id="userId" ng-model="user.userId" required>
+                    <p style="color: red;" ng-show="signUpForm.userId.$invalid && !signUpForm.userId.$pristine" class="help-block">UserId is required.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" ng-model="user.password" required>
+                    <p style="color:red;" ng-show="signUpForm.password.$invalid && !signUpForm.password.$pristine" class="help-block">Password is required.</p>
+                </div>
+
+                <button type="submit" class="btn btn-primary" ng-disabled="signUpForm.$invalid">Sign Up</button>
+
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

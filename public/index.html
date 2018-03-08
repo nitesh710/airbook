@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>AirBook System</title>
+
+		<!-- BootStrap CDN -->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  		<!-- Angular CDN -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+       
+        <!-- Custom js -->
+        
+		<script src="js/signUpController.js"></script>
+		<script src="js/signInController.js"></script>
+		<script src="js/adminController.js"></script>
+		<script src="js/flightsController.js"></script>
+		<script src="js/routes.js"></script>
+		<script src="js/app.js"></script>
+
+	</head>
+	<body ng-app="airBookApp" ng-controller="signUpFormCtrl">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+		  <!-- Links -->
+		  <ul class="navbar-nav">
+		    <li class="nav-item">
+		      <a class="nav-link" href="#/!">SignUp</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="#!/login">SignIn</a>
+		    </li>
+		  </ul>
+		</nav>
+		<div ng-view></div>
+
+	</body>
+</html>

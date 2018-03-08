@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Add Flights</title>
+	</head>
+	<body>
+		<div class="container" style="margin-top: 80px; width: 450px;">
+			<div class="card">
+				<div class="card-header"><h2>Add Flight</h2></div>
+				<div class="card-body">
+					<form name="addFlightForm" ng-submit="addFlight()">
+						<div class="form-group">
+							<label for="flight_no">Flight No</label>
+							<input type="number" name="flight_no" class="form-control" id="flight_no" ng-model="flight.flight_no" required>
+							<p style="color:red;" ng-show="addFlightForm.flight_no.$invalid && !addFlightForm.flight_no.$pristine" class="help-block">Flight No is required.</p>
+						</div>
+
+						<div class="form-group">
+							<label for="flight_name">Flight Name</label>
+							<input type="text" name="flight_name" class="form-control" id="flight_name" ng-model="flight.flight_name" required>
+							<p style="color:red;" ng-show="addFlightForm.flight_name.$invalid && !addFlightForm.flight_name.$pristine" class="help-block">Flight Name is required.</p>
+						</div>
+
+						<div class="form-group">
+							<label for="from">From</label>
+							<input type="text" name="from" class="form-control" id="from" ng-model="flight.from" required>
+							<p style="color:red;" ng-show="addFlightForm.from.$invalid && !addFlightForm.from.$pristine" class="help-block">This is required.</p>
+						</div>
+
+						<div class="form-group">
+							<label for="to">To</label>
+							<input type="text" name="to" class="form-control" id="to" ng-model="flight.to" required>
+							<p style="color:red;" ng-show="addFlightForm.to.$invalid && !addFlightForm.to.$pristine" class="help-block">This is required.</p>
+						</div>
+
+						<div class="form-group">
+							<label for="fare">Fare</label>
+							<input type="number" name="fare" class="form-control" id="fare" ng-model="flight.fare" required>
+							<p style="color:red;" ng-show="addFlightForm.fare.$invalid && !addFlightForm.fare.$pristine" class="help-block">This is required.</p>
+						</div>
+						<button type="submit" class="btn btn-primary" ng-disabled="addFlightForm.$invalid">Add</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
