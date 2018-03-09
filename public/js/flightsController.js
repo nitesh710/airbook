@@ -4,9 +4,11 @@ angular.module('flightsController', []).controller('flightsCtrl', ['$scope', '$h
 		.then(function onSuccess(response){
 			//handle on success
 			console.log(response.data);
+			$scope.success = "Flight added!";
 		}, function onError(response){
 			//handle on error
 			console.log(response.data);
+			$scope.success = "";
 		});
 	};
 }]);

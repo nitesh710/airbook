@@ -85,6 +85,22 @@ app.post('/api/addFlight/', function(req, res){
 	});
 });
 
+app.post('/api/search/', function(req, res){
+	Flight
+	.find({from: req.body.from,
+			to: req.body.to})
+	.exec( (err, flight) => {
+		console.log(flight);
+		if (flight == "") {
+			return res.status(400).send({"message": "Flight Not Available!"});
+		}
+		else{
+			return res.status(200).send({"flight": flight});
+			}
+			
+	});
+});
+
 app.listen(3000, function(){
 	console.log('server listening at port http://localhost:3000');
 });

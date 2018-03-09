@@ -8,8 +8,9 @@ angular.module('routes', []).config(['$routeProvider',function($routeProvider){
 		templateUrl: '../views/signIn.html',
 		controller: 'signInCtrl'
 	})
-	.when('/success', {
-		templateUrl: '../views/success.html'
+	.when('/search', {
+		templateUrl: '../views/searchFlight.html',
+		controller: 'searchFlightCtrl'
 	})
 	.when('/admin', {
 		templateUrl: '../views/admin.html',

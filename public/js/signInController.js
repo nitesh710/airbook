@@ -7,7 +7,7 @@ angular.module('signInController', []).controller('signInCtrl', ['$scope', '$htt
 			console.log(response.data.message);
 			$scope.errorText = "";
 			$scope.success="Success";
-			$location.path('/success');
+			$location.path('/search');
 		}, function onError(response){
 			// handle on error
 			console.log(response.status);

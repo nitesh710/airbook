@@ -1,1 +1,1 @@
-angular.module('airBookApp', ['ngRoute', 'routes', 'signUpController', 'signInController', 'adminController', 'flightsController']);
+angular.module('airBookApp', ['ngRoute', 'routes', 'signUpController', 'signInController', 'adminController', 'flightsController', 'searchFlightController']);
